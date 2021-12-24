@@ -1,0 +1,262 @@
+<style type="text/css">
+  
+
+.wrapper{
+  width:100%;
+  padding-top: 20px;
+  text-align:center;
+}
+
+.amazing_teachers{
+  width:100%;
+  margin:0px auto;
+}
+.slick-slide{
+  margin:10px;
+}
+.slick-slide img{
+  width:100%;
+  border: 2px solid #fff;
+}
+.wrapper .slick-dots li button:before {
+  font-size:20px;
+  color:white;
+}
+.carousel_item{
+  color: white;
+}
+
+
+
+.slick-dots {
+  position: absolute;
+  left: 20%;
+  display: inline-flex;
+  margin: 0;
+  padding: 1rem 0;
+  list-style-type: none;
+}
+
+.slick-dots li {
+  width: 12px;
+  margin: 0 3px;
+}
+
+.slick-dots button {
+  display: block;
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  margin: 0 auto;
+  border: none;
+  background-color: black !important;
+  border-radius: 100%;
+  background-color: grey;
+  text-indent: -9999px;
+}
+
+.slick-dots li.slick-active button {
+  background-color: blue;
+  width: 12px;
+  height: 12px;
+  margin-top:5px
+}
+
+.slick-dots li.slick-secondary button {
+  width: 8px;
+  height: 8px;
+ 
+}
+
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 5px;
+    height: 5px;
+    padding: 2px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: 0;
+    background: 0 0;
+    margin-top: 13px !important;
+}
+.image_circle{
+  
+  text-align: -webkit-center;
+}
+.position{
+  padding: 3px 4px;
+  background-color: rgb(247, 151, 47);
+  color: white;
+}
+.flip-card-front{
+  background-color: white;
+}
+.flip-card-back {
+  
+    color: white;
+    transform: rotateY(
+180deg);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 30px;
+    line-break: anywhere;
+}
+.flip-card{
+  width: 100%;
+}
+.section_title_font_size {
+    letter-spacing: 4.4px;
+}
+
+.letter_spacing{
+  letter-spacing: 4.4px;
+}
+
+  @media (min-width: 320px) and (max-width: 420px){
+    .amazing_teachers{
+          width:100%;
+        }
+    }
+
+</style>
+
+<div class="container-fluid" style="padding: 0px 5%;">
+  <div class="space40"></div>
+  <div class="container">
+    <h1 class="text-center primary_font section_title_font_size ">AMAZING TEACHERS</h1>
+    <div class=" text-center section_subtitle_font_size primary_font">Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem auci elit consequat ipsutissem niuis sed odio sit nibh vulputate cursus a sit amet.</div>
+   </div>
+
+<div class="wrapper">
+    <div class="amazing_teachers">
+        <?php foreach ($members as $key => $value) { ?>
+        <div class="carousel_item">
+
+          
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                              <div style="padding: 30px 20px;">
+                              <div class="image_circle">
+                                <img src="" alt="Avatar" style="border-radius:200px;height: 110px;width:110px">
+                                </div>
+                                <div class="space10"></div>
+                                <div class="secondary_font_size primary_font section_title_font_weight" style=" text-transform: uppercase;"><?php echo $value['first_name']." ".$value['last_name'];?></div>
+                                <div class="space10"></div>
+                                <div class="position primary_font"><?php echo $value['position'];?></div>
+                                 <div class="space10"></div>
+                                
+                            </div>
+                            </div>
+                            <div class="flip-card-back">
+                              <div>
+                                <div><i class="fa fa-comments-o fa-3x" aria-hidden="true"></i></div>
+                                <div class="text-center text-white secondary_font_size primary_font ">CONTACT ME</div>
+                                <div class="space10"></div>
+                                <div class="text-center text-white"><?php echo $value['phone'];?></div>
+                                <div class="space10"></div>
+                                <div class="text-center text-white"><?php echo $value['email']?></div>
+                                <div class="space10"></div>
+                                <div><i class="fa fa-twitter" aria-hidden="true"></i> &nbsp;<i class="fa fa-facebook" aria-hidden="true"></i> &nbsp;<i class="fa fa-linkedin" aria-hidden="true"></i> &nbsp;</div>
+                            </div>
+                            </div>
+                     
+                </div>
+               
+            </div>
+     
+        </div>
+        <?php } ?>
+        <!--   <div><img src="https://picsum.photos/300/200?random=2" class="img-responsive"></div>
+            <div><img src="https://picsum.photos/300/200?random=3" class="img-responsive"> </div>
+            <div><img src="https://picsum.photos/300/200?random=4" class="img-responsive"></div>
+            <div><img src="https://picsum.photos/300/200?random=5" class="img-responsive"></div>
+            <div><img src="https://picsum.photos/300/200?random=6" class="img-responsive"></div> -->
+    </div>
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('.amazing_teachers').slick({
+  slidesToShow: 4,
+  arrows:true,
+  dots:false,
+  centerMode: false,
+    autoplay: true,
+    autoplaySpeed: 1000,
+     mobileFirst:true,
+    responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            centerMode: false,
+            adaptiveHeight: true,
+          },
+        },
+
+        {
+          breakpoint: 900,
+          settings: {
+            slidesToShow: 2,
+             slidesToScroll: 4,
+            centerMode: false,
+            slidesToScroll: 2,
+          },
+        },
+         {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+            centerMode: false,
+            slidesToScroll: 2,
+          },
+        },
+         {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 2,
+            centerMode: false,
+            slidesToScroll: 2,
+          },
+        },
+
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            centerMode: false,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 400,
+          settings: {
+            slidesToShow: 1,
+            centerMode: false,
+            slidesToScroll: 1,
+          },
+        },
+
+        {
+          breakpoint: 300,
+          settings: {
+            slidesToShow: 1,
+            centerMode: false,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+  });
+});
+</script>
